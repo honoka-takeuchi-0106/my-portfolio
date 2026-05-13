@@ -62,7 +62,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Background decorations */
+/* Background decorations - Primary blobs */
 body::before,
 body::after {
   content: '';
@@ -70,29 +70,120 @@ body::after {
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
 }
 
 body::before {
-  width: 500px;
-  height: 500px;
-  top: -150px;
-  right: -100px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 8%, transparent), transparent);
-  filter: blur(80px);
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -150px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 12%, transparent), transparent);
+  filter: blur(100px);
+  animation: float-blob-1 15s ease-in-out infinite;
 }
 
 body::after {
-  width: 400px;
-  height: 400px;
-  bottom: 100px;
-  left: -80px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent2) 6%, transparent), transparent);
-  filter: blur(70px);
+  width: 500px;
+  height: 500px;
+  bottom: 50px;
+  left: -100px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent2) 10%, transparent), transparent);
+  filter: blur(95px);
+  animation: float-blob-2 18s ease-in-out infinite;
 }
 
 [data-theme="dark"]::before,
 [data-theme="dark"]::after {
-  filter: blur(100px) brightness(0.8);
+  filter: blur(120px) brightness(0.9);
+}
+
+/* Secondary blob decorations on body */
+body {
+  --blob-3-x: 0;
+  --blob-3-y: 0;
+  --blob-4-x: 0;
+  --blob-4-y: 0;
+}
+
+body::backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animations */
+@keyframes float-blob-1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(30px, -30px); }
+  66% { transform: translate(-20px, 30px); }
+}
+
+@keyframes float-blob-2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-25px, 35px); }
+  66% { transform: translate(25px, -25px); }
+}
+
+@keyframes float-blob-3 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(40px, 20px); }
+  66% { transform: translate(-30px, -40px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
+
+/* Section-level background enhancements */
+section {
+  position: relative;
+}
+
+section:nth-child(3n)::before {
+  content: '';
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent2) 6%, transparent), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  animation: float-blob-3 16s ease-in-out infinite;
+}
+
+section:nth-child(3n + 2)::before {
+  content: '';
+  position: absolute;
+  left: -80px;
+  top: 30%;
+  transform: translateY(-50%);
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 5%, transparent), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(85px);
+  animation: float-blob-1 17s ease-in-out infinite reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  section:nth-child(3n)::before,
+  section:nth-child(3n + 2)::before {
+    animation: none;
+  }
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -217,6 +308,7 @@ nav {
 section { 
   padding: 5rem 0; 
   position: relative;
+  z-index: 1;
 }
 section:nth-child(even) { background: var(--bg2); }
 
@@ -250,6 +342,7 @@ section:nth-child(even) { background: var(--bg2); }
   align-items: center;
   background: var(--bg);
   position: relative;
+  z-index: 1;
 }
 .hero-inner {
   display: flex;
