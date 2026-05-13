@@ -1,46 +1,46 @@
 /* ===== Custom Properties ===== */
 :root {
-  --accent: #6c63ff;
-  --accent2: #ff6584;
+  --accent: #0066cc;
+  --accent2: #0099ff;
 
   /* Light theme */
   --bg: #ffffff;
-  --bg2: #f5f5f7;
+  --bg2: #f0f6ff;
   --text: #1a1a2e;
   --text-muted: #555577;
-  --border: #e0e0e8;
+  --border: #d4e3ff;
   --card-bg: #ffffff;
   --nav-bg: color-mix(in srgb, #ffffff 85%, transparent);
 
-  --badge-lang-bg: color-mix(in srgb, #6c63ff 15%, transparent);
-  --badge-lang-color: #4b44cc;
-  --badge-tool-bg: color-mix(in srgb, #00b4d8 15%, transparent);
-  --badge-tool-color: #007a99;
-  --badge-other-bg: color-mix(in srgb, #ff6584 15%, transparent);
-  --badge-other-color: #cc3355;
+  --badge-lang-bg: color-mix(in srgb, #0066cc 15%, transparent);
+  --badge-lang-color: #004499;
+  --badge-tool-bg: color-mix(in srgb, #0099ff 15%, transparent);
+  --badge-tool-color: #0077cc;
+  --badge-other-bg: color-mix(in srgb, #00ccff 15%, transparent);
+  --badge-other-color: #0099dd;
 
-  --shadow: 0 4px 24px color-mix(in srgb, #000 8%, transparent);
+  --shadow: 0 4px 24px color-mix(in srgb, #0066cc 12%, transparent);
   --radius: 12px;
   --transition: 0.25s ease;
 }
 
 [data-theme="dark"] {
-  --bg: #0f0f1a;
-  --bg2: #1a1a2e;
+  --bg: #0a0e27;
+  --bg2: #0f1535;
   --text: #e8e8f0;
-  --text-muted: #9999bb;
-  --border: #2a2a44;
-  --card-bg: #1e1e32;
-  --nav-bg: color-mix(in srgb, #0f0f1a 85%, transparent);
+  --text-muted: #99aadd;
+  --border: #1a2855;
+  --card-bg: #141d3e;
+  --nav-bg: color-mix(in srgb, #0a0e27 85%, transparent);
 
-  --badge-lang-bg: color-mix(in srgb, #6c63ff 25%, transparent);
-  --badge-lang-color: #a09aff;
-  --badge-tool-bg: color-mix(in srgb, #00b4d8 25%, transparent);
-  --badge-tool-color: #4dd8f0;
-  --badge-other-bg: color-mix(in srgb, #ff6584 25%, transparent);
-  --badge-other-color: #ff99aa;
+  --badge-lang-bg: color-mix(in srgb, #0066cc 35%, transparent);
+  --badge-lang-color: #66b3ff;
+  --badge-tool-bg: color-mix(in srgb, #0099ff 35%, transparent);
+  --badge-tool-color: #4dccff;
+  --badge-other-bg: color-mix(in srgb, #00ccff 35%, transparent);
+  --badge-other-color: #66ddff;
 
-  --shadow: 0 4px 24px color-mix(in srgb, #000 30%, transparent);
+  --shadow: 0 4px 24px color-mix(in srgb, #0066cc 25%, transparent);
 }
 
 /* ===== Reset & Base ===== */
